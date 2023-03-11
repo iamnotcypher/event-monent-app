@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home'
 import Login from '../views/Login'
-import Create from '../views/Create'
 import Register from '../views/Register'
+import Create from '../views/Create'
 import Event from '../views/Event'
 
 const routes = [
   {
-    path: '/',
+    path: '/event',
     name: 'Home',
     component: Home
   },
@@ -27,15 +27,21 @@ const routes = [
     component: Register
   },
   {
-    path: '/event',
+    path: '/event/:id',
     name: 'Event',
-    component: Event
+    component: Event,
+    props: true
   },
+  // redirect
+  {
+    path: '/',
+    redirect: '/event'
+  }
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
+  history: createWebHistory(process.env.BASE_URL), 
+  routes,
 })
 
 export default router

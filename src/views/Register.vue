@@ -19,7 +19,7 @@
 
     <div class="text-center mt-8">
       <!-- link in a submit button is just to link to the home page. NOTE: bad practise -->
-      <router-link :to="{ name: 'Home'}">
+      <router-link to="/">
         <button class="bg-secondary text-white py-2 px-3 w-36 rounded-md text-sm">
           Create
         </button>

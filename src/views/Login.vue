@@ -15,7 +15,7 @@
     </div>
 
     <div class="text-center mt-8">
-      <router-link :to="{ name: 'Home'}">
+      <router-link to="/">
         <button class="bg-secondary text-white py-2 px-3 w-36 rounded-md text-sm">
           Login
         </button>

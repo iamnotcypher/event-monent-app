@@ -1,21 +1,23 @@
 <template>
-  <nav class="flex justify-between items-center column bg-primary h-16 min-[100px]:px-4 md:px-16 text-white">
-    <router-link :to="{ name: 'Home' }">
+  <nav
+    class="flex justify-between items-center column bg-primary h-16 min-[100px]:px-4 md:px-16 text-white"
+  >
+    <router-link to="/">
       <h1 class="italic font-bold">Eventful Moments.</h1>
     </router-link>
 
     <ul class="">
       <span class="text-sm pl-3">
-        <router-link v-if="!login" :to="{ name: 'Login' }">Login</router-link>
+        <router-link v-if="!login" to="/login">Login</router-link>
       </span>
       <span class="text-sm pl-3">
-        <router-link v-if="login" :to="{ name: 'Login' }">Logout</router-link>
+        <router-link v-if="login" to="/login">Logout</router-link>
       </span>
       <span class="text-sm pl-3">
-        <router-link v-if="!login" :to="{ name: 'Register' }">Register</router-link>
+        <router-link v-if="!login" to="/register">Register</router-link>
       </span>
       <span class="text-sm pl-3">
-        <router-link v-if="login" :to="{name: 'Home' }">My Bucket</router-link>
+        <router-link v-if="login" to="/">My Bucket</router-link>
       </span>
     </ul>
   </nav>
@@ -23,6 +25,6 @@
 
 <script>
 export default {
- props: ['login']
-}
+  props: ["login"],
+};
 </script>

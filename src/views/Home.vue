@@ -7,7 +7,7 @@
         <h1 class="text-black text-2xl mb-1 font-semibold">Welcome John Doe,</h1>
         <p>Here are items in your eventful moment bucket.</p>
       </div>
-      <router-link to="/create">
+      <router-link to="/create-event">
         <button class="btn bg-secondary">Add Item</button>
       </router-link>
     </div>
@@ -22,20 +22,23 @@
             <router-link class="grow" :to="{ name: 'Event', params: { id: para.id} }">
               <small class="text-secondary">View Details</small>
             </router-link>
-            <small class="text-gray-300 pr-8">10/03/2023</small>
+            <small class="text-gray-300 px-5">10/03/2023</small>
             <small>10/03/2023</small>
           </div>
       </div>
+    </div>
+
+    <div class="text-center my-24">
+      <button class="btn bg-secondary">Load More</button>
     </div>
   </div>
 </template>
 
 <script>
 import Nav from '../components/Nav'
-
 export default {
   components: {
-    Nav,
+    Nav
   },
   data() {
     return {

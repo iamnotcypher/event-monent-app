@@ -1,6 +1,6 @@
 <template>
-  <footer class="bg-tertiary text-sm flex justify-center items-end flex-col h-12 min-[200px]:px-4 md:px-16">
-    <p>Eventful moment by Hussein Hussain (codemaniac)</p>
+  <footer class="bg-tertiary flex justify-center text-sm items-end flex-col h-12 min-[100px]:px-4 md:px-16">
+    <p>Eventful Moments by Hussein Hussain (codemaniac)</p>
   </footer>
 </template>
 
@@ -9,7 +9,3 @@ export default {
   name: 'Footer',
 }
 </script>
-
-<style>
-
-</style>

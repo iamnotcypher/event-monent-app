@@ -1,5 +1,5 @@
 <template>
-  <div class="font-body text-base">
+  <div class="font-body text-base relative">
     <router-view/>
     <Footer />
   </div>

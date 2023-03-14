@@ -11,7 +11,7 @@
     </p>
     <div class="text-center my-16 mb-24 flex">
       <button class="btn bg-info mr-4">
-        <router-link :to="{ name: 'EditEvent' }">Edit</router-link>
+        <router-link to="/edit-event">Edit</router-link>
       </button>
       <button class="btn bg-danger">Delete</button>
     </div>

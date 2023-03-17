@@ -62,11 +62,7 @@ export default {
     }
   },
   async created() {
-    const response = await axios.get('me', {
-      headers: {
-        Authorization:  'Bearer ' + localStorage.getItem('token')
-      }
-    })
+    const response = await axios.get('me')
 
     this.$route.push('/')
 

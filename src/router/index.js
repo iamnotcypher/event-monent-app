@@ -8,7 +8,7 @@ import EditEvent from '../views/EditEvent'
 
 const routes = [
   {
-    path: '/event',
+    path: '/',
     name: 'Home',
     component: Home
   },

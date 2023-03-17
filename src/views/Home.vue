@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 import Nav from '../components/Nav'
 export default {
   components: {
@@ -58,6 +60,17 @@ export default {
         },
       ]
     }
+  },
+  async created() {
+    const response = await axios.get('me', {
+      headers: {
+        Authorization:  'Bearer ' + localStorage.getItem('token')
+      }
+    })
+
+    this.$route.push('/')
+
+    console.log(response)
   }
 }
 </script>

@@ -1,15 +1,27 @@
 <template>
   <div class="font-body text-base flex flex-col relative min-h-screen">
-    <router-view/>
+    <router-view :user="user"/>
     <Footer />
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 import Footer from "./components/Footer"
 export default {
   name: "App",
-  components: { Footer, },
+  components: { Footer },
+  data() {
+    return {
+      user: null,
+    }
+  },
+  async created() {
+    const response = await axios.get('me')
+
+    this.user = response.data.data[0]
+  }
 }
 </script>
 <style>

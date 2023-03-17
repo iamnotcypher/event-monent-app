@@ -4,7 +4,8 @@
   <div class="min-[100px]:px-4 md:px-16">
     <div class="md:flex justify-between items-center my-12">
       <div class="mb-4">
-        <h1 class="text-black text-2xl mb-1 font-semibold">Welcome John Doe,</h1>
+        <h1 v-if="user" class="text-black text-2xl mb-1 font-semibold">Welcome {{ user.fullname }},</h1>
+        <h1 v-if="!user" class="text-black text-2xl mb-1 font-semibold">You're not logged in!</h1>
         <p>Here are items in your eventful moment bucket.</p>
       </div>
       <router-link to="/create-event">
@@ -39,6 +40,8 @@ import axios from 'axios'
 
 import Nav from '../components/Nav'
 export default {
+  name: 'Home',
+  props: ['user'],
   components: {
     Nav
   },
@@ -60,13 +63,6 @@ export default {
         },
       ]
     }
-  },
-  async created() {
-    const response = await axios.get('me')
-
-    this.$route.push('/')
-
-    console.log(response)
   }
 }
 </script>

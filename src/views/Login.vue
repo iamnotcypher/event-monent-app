@@ -43,11 +43,11 @@ export default {
       const response = await axios.post('login', {
         email: this.email,
         password: this.password
-      })
+      });
+
       localStorage.setItem('token', response.data.token)
 
-      // this.email = ''
-      // this.password = ''
+      this.$router.push('/')
     }
   }
 }

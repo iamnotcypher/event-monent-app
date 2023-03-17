@@ -11,7 +11,7 @@
         <router-link v-if="!login" to="/login">Login</router-link>
       </span>
       <span class="text-sm pl-3">
-        <router-link v-if="login" to="/login">Logout</router-link>
+        <router-link v-if="login">Logout</router-link>
       </span>
       <span class="text-sm pl-3">
         <router-link v-if="!login" to="/register">Register</router-link>

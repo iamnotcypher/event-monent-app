@@ -51,7 +51,7 @@ export default {
         password: this.password
       });
 
-      this.$route.push('/event')
+      this.$router.push('/')
       this.fullname = ''
       this.email = ''
       this.password = ''

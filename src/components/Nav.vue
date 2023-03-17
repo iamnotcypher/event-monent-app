@@ -8,7 +8,7 @@
 
     <ul v-if="user">
       <span class="text-sm pl-3">
-        <router-link to="/login">Logout</router-link>
+        <a @click="handleLogout" href="javascript:void(0)">Logout</a>
       </span>
       <span class="text-sm pl-3">
         <router-link to="/">My Bucket</router-link>
@@ -30,5 +30,11 @@
 <script>
 export default {
   props: ['user'],
+  methods: {
+    handleLogout() {
+      localStorage.removeItem('token')
+      this.$$router.push('/')
+    }
+  }
 };
 </script>

@@ -18,6 +18,6 @@
 
 <script>
 export default {
-  props: ['id']
+  props: ['user', 'id']
 }
 </script>

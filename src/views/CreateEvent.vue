@@ -1,6 +1,4 @@
 <template>
-  <Nav :login="login" />
-
   <form class="max-w-md mt-8 mb-24 min-[100px]:px-4 md:px-16">
     <div class="mb-4">
       <label class="text-sm block">Date in the future</label>
@@ -27,11 +25,6 @@ import Nav from '../components/Nav'
 export default {
   components: {
     Nav
-  },
-  data() {
-    return {
-      login: true
-    }
   }
 }
 </script>

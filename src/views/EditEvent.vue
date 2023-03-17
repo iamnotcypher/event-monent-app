@@ -1,6 +1,4 @@
 <template>
-  <Nav :login="login" />
-
   <form class="max-w-md mt-8 min-[100px]:px-4 md:px-16 mb-24" >
     <div class="mb-4">
       <label class="text-sm block">Date in the future</label>
@@ -29,7 +27,6 @@ export default {
   },
   data() {
     return {
-      login: true,
       date: '20/07/2050',
       title: 'Lorem ipsum began as scrambled, nonsensical Latin derived from Cicero’s 1st-century.',
       detail: 'Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It’s not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real. Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It’s not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.'

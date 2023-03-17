@@ -1,6 +1,4 @@
 <template>
-  <!-- <Nav :user="user" /> -->
-
   <div class="min-[100px]:px-4 md:px-16">
     <div class="md:flex justify-between items-center my-12">
       <div class="mb-4">
@@ -37,13 +35,9 @@
 
 <script>
 
-import Nav from '../components/Nav'
 export default {
   name: 'Home',
   props: ['user'],
-  components: {
-    Nav
-  },
   data() {
     return {
       paras: [

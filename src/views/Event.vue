@@ -1,6 +1,4 @@
 <template>
-  <Nav :login="login" />
-
   <div class="min-[100px]:px-4 md:px-16">
     <h1 class="font-bold mb-1 font-normal mt-10 text-2xl mb-1">Lorem ipsum began as scrambled, nonsensical Latin derived from Cicero’s 1st-century.</h1>
     <small class="text-gray-500">10/03/2023</small>
@@ -22,11 +20,6 @@
 import Nav from "../components/Nav"
 export default {
   components: { Nav },
-  props: ['id'],
-  data(){
-    return {
-      login: true
-    }
-  }
+  props: ['id']
 }
 </script>

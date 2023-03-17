@@ -1,6 +1,4 @@
 <template>
-  <Nav :login="login" />
-  
   <form @submit.prevent="handleSignup" class="max-w-md mx-auto mt-16 min-[100px]:px-4 md:px-16">
     <h1 class="text-black text-2xl mb-6 font-semibold">Create an account,</h1>
 
@@ -31,15 +29,11 @@ import  axios from 'axios'
 import Nav from '../components/Nav'
 
 export default {
-  components: {
-    Nav
-  },
   data() {
     return {
       fullname: '',
       email: '',
       password: '',
-      login: false
     }
   },
   methods: {

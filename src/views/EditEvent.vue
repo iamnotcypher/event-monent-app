@@ -20,11 +20,8 @@
 </template>
 
 <script>
-import Nav from '../components/Nav'
+
 export default {
-  components: {
-    Nav
-  },
   data() {
     return {
       date: '20/07/2050',

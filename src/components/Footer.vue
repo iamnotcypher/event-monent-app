@@ -1,6 +1,6 @@
 <template>
   <footer class="bg-tertiary flex justify-center text-sm items-end flex-col h-12 min-[100px]:px-4 md:px-16 absolute bottom-0 w-full">
-    <p>Eventful Moments by Hussein Hussain (codemaniac)</p>
+    <p>Eventful Moments by Hussein Hussain</p>
   </footer>
 </template>
 

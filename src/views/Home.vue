@@ -1,5 +1,5 @@
 <template>
-  <Nav :login="login" />
+  <!-- <Nav :user="user" /> -->
 
   <div class="min-[100px]:px-4 md:px-16">
     <div class="md:flex justify-between items-center my-12">
@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 
 import Nav from '../components/Nav'
 export default {
@@ -47,7 +46,6 @@ export default {
   },
   data() {
     return {
-      login: true,
       paras: [
         {
           id: 1,

@@ -8,16 +8,16 @@
 
     <ul class="">
       <span class="text-sm pl-3">
-        <router-link v-if="!login" to="/login">Login</router-link>
+        <router-link v-if="!user" to="/login">Login</router-link>
       </span>
       <span class="text-sm pl-3">
-        <router-link v-if="login">Logout</router-link>
+        <router-link v-if="user" to="/login">Logout</router-link>
       </span>
       <span class="text-sm pl-3">
-        <router-link v-if="!login" to="/register">Register</router-link>
+        <router-link v-if="!user" to="/register">Register</router-link>
       </span>
       <span class="text-sm pl-3">
-        <router-link v-if="login" to="/">My Bucket</router-link>
+        <router-link v-if="user" to="/">My Bucket</router-link>
       </span>
     </ul>
   </nav>
@@ -25,6 +25,6 @@
 
 <script>
 export default {
-  props: ["login"],
+  props: ['user'],
 };
 </script>

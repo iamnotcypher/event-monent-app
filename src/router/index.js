@@ -38,11 +38,6 @@ const routes = [
     name: 'EditEvent',
     component: EditEvent,
   },
-  // redirect
-  {
-    path: '/',
-    redirect: '/event'
-  }
 ]
 
 const router = createRouter({

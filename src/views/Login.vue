@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       email: 'emeka.akpan@uatdrive.com',
-      password: 'emeka.akpan@uatdrive.com',
+      password: 'password',
       login: false
     }
   },
@@ -44,7 +44,10 @@ export default {
         email: this.email,
         password: this.password
       })
-      console.log(response)
+      localStorage.setItem('token', response.data.token)
+
+      // this.email = ''
+      // this.password = ''
     }
   }
 }

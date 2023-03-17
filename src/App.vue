@@ -12,3 +12,8 @@ export default {
   components: { Footer, },
 }
 </script>
+<style>
+  input {
+    outline-color: #e5e7eb;
+  }
+</style>

@@ -6,7 +6,7 @@
 
     <div class="mb-4">
       <label class="text-sm block">Full name</label>
-      <input class="border w-full sm:w-96 rounded-md p-1" type="text" v-model="full_name" required />
+      <input class="border w-full sm:w-96 rounded-md p-1" type="text" v-model="fullname" required />
     </div>
     <div class="mb-4">
       <label class="text-sm block">Email</label>
@@ -36,27 +36,25 @@ export default {
   },
   data() {
     return {
-      full_name: '',
+      fullname: '',
       email: '',
       password: '',
       login: false
     }
   },
   methods: {
-    handleSignup() {
-      const data = {
-        full_name: this.full_name,
+    async handleSignup() {
+
+      const response = await axios.post('signup', {
+        fullname: this.fullname,
         email: this.email,
         password: this.password
-      }
-      
-      
-      axios.post('https://eventful-moments.onrender.com/api/v1/users/signup', data)
-        .then(res => {
-          console.log(res)
-        }).catch(err => {
-          console.log(err)
-        })
+      });
+
+      this.$route.push('/event')
+      this.fullname = ''
+      this.email = ''
+      this.password = ''
     }
   }
 }

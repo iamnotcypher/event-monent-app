@@ -6,20 +6,24 @@
       <h1 class="italic font-bold">Eventful Moments.</h1>
     </router-link>
 
-    <ul class="">
+    <ul v-if="user">
       <span class="text-sm pl-3">
-        <router-link v-if="!user" to="/login">Login</router-link>
+        <router-link to="/login">Logout</router-link>
       </span>
       <span class="text-sm pl-3">
-        <router-link v-if="user" to="/login">Logout</router-link>
-      </span>
-      <span class="text-sm pl-3">
-        <router-link v-if="!user" to="/register">Register</router-link>
-      </span>
-      <span class="text-sm pl-3">
-        <router-link v-if="user" to="/">My Bucket</router-link>
+        <router-link to="/">My Bucket</router-link>
       </span>
     </ul>
+
+    <ul v-if="!user">
+      <span class="text-sm pl-3">
+        <router-link to="/login">Login</router-link>
+      </span>
+      <span class="text-sm pl-3">
+        <router-link to="/register">Register</router-link>
+      </span>
+    </ul>
+
   </nav>
 </template>
 

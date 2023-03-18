@@ -34,10 +34,20 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
+  async created() {
+    const response = await axios.get('me')
+
+    const data =  response.data.data[0]
+
+    this.$store.dispatch('user', data)
+    console.log(data)
+  },
   computed: {
     ...mapGetters(['user'])
   },

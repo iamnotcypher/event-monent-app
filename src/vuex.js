@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.useAttrs(Vuex)
+Vue.use(Vuex)
 
 const state = {
   user: null

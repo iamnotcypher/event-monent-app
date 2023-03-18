@@ -29,6 +29,7 @@ import Error from './Error.vue'
 import  axios from 'axios'
 
 export default {
+  name: 'Register',
   components: { Error },
   data() {
     return {
@@ -50,7 +51,8 @@ export default {
         });
   
         this.$router.push('/login')
-      }catch(err) {
+
+      } catch(err) {
         this.error = 'Error occurred while regsitering!'
       }
 

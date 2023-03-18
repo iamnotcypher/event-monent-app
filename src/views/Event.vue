@@ -18,6 +18,7 @@
 
 <script>
 export default {
-  props: ['user', 'id']
+  name: 'Event',
+  props: ['id']
 }
 </script>

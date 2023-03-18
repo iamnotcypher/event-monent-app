@@ -22,6 +22,7 @@
 <script>
 
 export default {
+  name: 'EditEvent',
   data() {
     return {
       date: '20/07/2050',

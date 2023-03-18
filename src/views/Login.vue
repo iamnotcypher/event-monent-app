@@ -26,8 +26,8 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      email: '',
-      password: '',
+      email: 'huzi@google.com',
+      password: 'test12345',
     }
   },
   methods: {
@@ -37,6 +37,8 @@ export default {
         email: this.email,
         password: this.password
       });
+
+      console.log(response)
 
       localStorage.setItem('token', response.data.token)
       this.$store.dispatch('user', response.data.user)

@@ -31,10 +31,14 @@
 import { mapGetters } from 'vuex'
 
 export default {
+  name: 'Nav',
   methods: {
     handleLogout() {
+
       localStorage.removeItem('token')
-      this.$router.push("/")
+      this.$store.dispatch('user', null)
+      this.$router.push("/login")
+
     }
   },
   computed: {

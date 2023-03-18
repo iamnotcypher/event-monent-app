@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   props: ['user'],
   methods: {
@@ -35,6 +37,9 @@ export default {
       localStorage.removeItem('token')
       this.$router.push('/')
     }
+  },
+  computed: {
+    ...mapGetters(['user'])
   }
 };
 </script>

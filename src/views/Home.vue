@@ -34,10 +34,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
-  props: ['user'],
+  computed: {
+    ...mapGetters(['user'])
+  },
   data() {
     return {
       paras: [

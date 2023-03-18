@@ -43,10 +43,7 @@ export default {
         password: this.password
       });
 
-      this.$router.push('/')
-      this.fullname = ''
-      this.email = ''
-      this.password = ''
+      this.$router.push('/login')
     }
   }
 }

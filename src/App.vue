@@ -8,6 +8,8 @@
 
 <script>
 import axios from 'axios'
+// import {computed} from 'vue';
+// import {useStore} from "vuex";
 
 import Nav from "./components/Nav"
 import Footer from "./components/Footer"
@@ -18,6 +20,7 @@ export default {
     const response = await axios.get('me')
 
     this.$store.dispatch('user', response.data.data[0])
+    console.log(response.data.data[0])
   }
 }
 </script>
@@ -26,3 +29,24 @@ export default {
     outline-color: #e5e7eb;
   }
 </style>
+
+// setup() {
+//     const store = useStore();
+
+//     let user = computed(() => {
+//       return store.state.user
+//     })
+
+//       const userData = async () => {
+//         try {
+//           const response = await axios.get('me')
+//           console.log(response)
+//       } catch(err) {
+//         console.log('Failed to load data')
+//       }
+
+//       userData()
+//     }
+
+//     return { user, userData }
+//   }

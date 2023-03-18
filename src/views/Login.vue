@@ -26,12 +26,13 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      email: 'emeka.akpan@uatdrive.com',
-      password: 'password',
+      email: '',
+      password: '',
     }
   },
   methods: {
     async handleLogin() {
+
       const response = await axios.post('login', {
         email: this.email,
         password: this.password
@@ -39,7 +40,7 @@ export default {
 
       localStorage.setItem('token', response.data.token)
       this.$store.dispatch('user', response.data.user)
-      console.log(response.data.user)
+
       this.$router.push('/')
     }
   }

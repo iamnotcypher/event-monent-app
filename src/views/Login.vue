@@ -32,8 +32,8 @@ export default {
   components: { Error },
   data() {
     return {
-      email: 'huzi@google.com',
-      password: 'test12345',
+      email: 'emeka.akpan@uatdrive.com',
+      password: 'password',
       error: ''
     }
   },

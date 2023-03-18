@@ -1,12 +1,13 @@
 <template>
-  <div v-if="error" class="">
+  <div class="">
     {{ error }}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Error'
+  name: 'Error',
+  props: ['error']
 }
 </script>
 

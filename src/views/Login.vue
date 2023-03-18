@@ -3,10 +3,8 @@
     <h1 class="text-black text-2xl font-semibold">Welcome back,</h1>
     <p class="my-4">Hi, my name is Eventful Moments, I am a bucket… no, not the bucket of water but I store awesome moments you will like to have in coming years.</p>
 
-    <div v-if="error" class="">
-      {{ error }}
-    </div>
-    
+    <Error v-if="error" :error="error"/>
+
     <div class="mb-4">
       <label class="text-sm block">Email</label>
       <input class="border w-full sm:w-96 rounded-md p-1" type="email" v-model="email" required />
@@ -27,8 +25,11 @@
 <script>
 import axios from 'axios'
 
+import Error from './Error.vue'
+
 export default {
   name: 'Login',
+  components: { Error },
   data() {
     return {
       email: 'huzi@google.com',

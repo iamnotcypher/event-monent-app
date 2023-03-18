@@ -3,6 +3,10 @@
     <h1 class="text-black text-2xl font-semibold">Welcome back,</h1>
     <p class="my-4">Hi, my name is Eventful Moments, I am a bucket… no, not the bucket of water but I store awesome moments you will like to have in coming years.</p>
 
+    <div v-if="error" class="">
+      {{ error }}
+    </div>
+    
     <div class="mb-4">
       <label class="text-sm block">Email</label>
       <input class="border w-full sm:w-96 rounded-md p-1" type="email" v-model="email" required />
@@ -29,22 +33,28 @@ export default {
     return {
       email: 'huzi@google.com',
       password: 'test12345',
+      error: ''
     }
   },
   methods: {
     async handleLogin() {
+      try{
 
-      const response = await axios.post('login', {
-        email: this.email,
-        password: this.password
-      });
+        const response = await axios.post('login', {
+          email: this.email,
+          password: this.password
+        });
+  
+  
+        localStorage.setItem('token', response.data.token)
+        this.$store.dispatch('user', response.data.user)
+  
+        this.$router.push('/')
 
-      // console.log(response.data.user)
+      } catch(err) {
+        this.error = 'Invalid email and password'
+      }
 
-      localStorage.setItem('token', response.data.token)
-      this.$store.dispatch('user', response.data.user)
-
-      this.$router.push('/')
     }
   }
 }

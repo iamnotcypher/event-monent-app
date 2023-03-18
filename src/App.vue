@@ -17,7 +17,7 @@ export default {
   async created() {
     const response = await axios.get('me')
 
-    this.$store.dispatch(user, response.data.data[0])
+    this.$store.dispatch('user', response.data.data[0])
   }
 }
 </script>

@@ -31,7 +31,6 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  props: ['user'],
   methods: {
     handleLogout() {
       localStorage.removeItem('token')

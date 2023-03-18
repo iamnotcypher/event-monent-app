@@ -3,12 +3,6 @@ import App from './App.vue'
 import router from './router'
 import './assets/tailwind.css'
 import './axios.js'
-import { store } from './vuex'
+import store from "./store";
 
-const app = createApp(App)
-
-app.use(router)
-app.use(store)
-app.mount('#app')
-
-// createApp(App).use(store).use(router).mount('#app')
+createApp(App).use(router).use(store).mount('#app')

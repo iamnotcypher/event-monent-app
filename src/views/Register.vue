@@ -50,7 +50,7 @@ export default {
           password: this.password,
         });
   
-        this.$router.push('/login')
+        this.$router.push('users/login')
 
       } catch(err) {
         this.error = 'Error occurred while regsitering!'

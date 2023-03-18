@@ -14,19 +14,17 @@
     <!-- cards -->
     <div class="my-8 grid lg:grid-cols-2 gap-10">
       <!-- card -->
-      <div v-if="moments">
         <div v-for="moment in moments" :key="moment.id" class="shadow p-5 rounded hover:bg-active">
             <h4 class="font-bold text-base mb-1 leading-5">{{ moment.title }}</h4>
             <p class="mb-1 text-sm">{{ moment.details }}</p>
             <div class="mt-4 flex items-center justify-between">
-              <!-- <router-link class="grow" :to="{ name: 'Event', params: { id: moment.id} }">
+              <router-link class="grow" :to="{ name: 'Event', params: { id: moment._id } }">
                 <small class="text-secondary">View Details</small>
-              </router-link> -->
+              </router-link>
               <small class="text-gray-300 px-5">10/03/2023</small>
               <small>10/03/2023</small>
             </div>
         </div>
-      </div>
     </div>
 
     <div class="text-center my-24">
@@ -42,23 +40,20 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
-  props:['id'],
   data() {
     return {
       moments: []
     }
   },
   async mounted() {
-    const response = await axios.get('me')
+    const response = await axios.get('users/me')
     const data =  response.data.data[0]
 
     this.$store.dispatch('user', data)
 
-    this.moments = data.moments[0]
-
-    console.log(data)
+    this.moments = data.moments
     console.log(this.moments)
-    console.log(this.moments.title)
+
   },
   computed: {
     ...mapGetters(['user'])

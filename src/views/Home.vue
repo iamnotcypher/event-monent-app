@@ -1,9 +1,12 @@
 <template>
-  <div class="min-[100px]:px-4 md:px-16">
+  <h2 v-if="!user">
+    Loading..
+  </h2>
+  <div v-if="user" class="min-[100px]:px-4 md:px-16">
     <div class="md:flex justify-between items-center my-12">
       <div class="mb-4">
         <h1 v-if="user" class="text-black text-2xl mb-1 font-semibold">Welcome {{ user.fullname }},</h1>
-        <h1 v-else class="text-black text-2xl mb-1 font-semibold">You're not logged in!</h1>
+        <h1 v-if="!user" class="text-black text-2xl mb-1 font-semibold">You're not logged in!</h1>
         <p>Here are items in your eventful moment bucket.</p>
       </div>
       <router-link to="/create-event">

@@ -3,7 +3,7 @@
     <h1 class="text-black text-2xl font-semibold">Welcome back,</h1>
     <p class="my-4">Hi, my name is Eventful Moments, I am a bucket… no, not the bucket of water but I store awesome moments you will like to have in coming years.</p>
 
-    <Error v-if="error" :error="error" class="mb-6 bg-red-400 p-2 text-white rounded-sm d-inline-block" />
+    <Error v-if="error" :error="error" class="mb-6 bg-red-400 p-2 text-white rounded-sm inline-block" />
 
     <div class="mb-4">
       <label class="text-sm block">Email</label>
@@ -51,7 +51,7 @@ export default {
         this.$router.push('/')
 
       } catch(err) {
-        this.error = 'Invalid email or password'
+        this.error = 'incorrect email or password'
       }
 
     }

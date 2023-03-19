@@ -2,7 +2,7 @@
   <form @submit.prevent="handleSignup" class="max-w-md mx-auto mt-16 min-[100px]:px-4 md:px-16">
     <h1 class="text-black text-2xl mb-6 font-semibold">Create an account,</h1>
 
-    <Error v-if="error" :error="error" class="mb-6 bg-red-400 p-2 text-white rounded-sm d-inline-block" />
+    <Error v-if="error" :error="error" class="mb-6 bg-red-400 p-2 text-white rounded-sm inline-block" />
 
     <div class="mb-4">
       <label class="text-sm block">Full name</label>

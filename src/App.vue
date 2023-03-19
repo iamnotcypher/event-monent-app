@@ -18,6 +18,6 @@ export default {
 <style>
   input, textarea {
     outline-color: #e5e7eb;
-    font-size: 14px;
+    font-size: 13px !important;
   }
 </style>

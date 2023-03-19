@@ -27,24 +27,21 @@ export default {
   name: 'CreateEvent',
   data() {
     return {
-      title: 'just another moment in time',
-      details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quaerat culpa reiciendis eveniet ut possimus necessitatibus ratione, esse voluptatem vitae deserunt assumenda earum, numquam iste, quibusdam ipsa ipsam expedita tempora ducimus. Quisquam excepturi possimus hic, vitae corrupti impedit quas vero.',
-      futureDate: '12-12-2055',
-      token: ''
+      title: 'A moment in the near future',
+      details: 'Quisquam excepturi possimus hic, vitae corrupti impedit quas vero.  Esse voluptatem vitae deserunt assumenda earum, numquam iste, quibusdam ipsa ipsam expedita tempora ducimus.',
+      futureDate: '22-10-2050'
     }
   },
   methods: {
     async handleSubmit() {
 
-      const response = await axios.post('moment', {
+      await axios.post('moment', {
         title: this.title,
         details: this.details,
         futureDate: this.futureDate
       })
 
       this.$router.push('/')
-
-      console.log(response)
 
     }
   }

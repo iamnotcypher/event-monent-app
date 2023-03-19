@@ -27,9 +27,9 @@ export default {
   name: 'CreateEvent',
   data() {
     return {
-      title: 'A moment in the near future',
-      details: 'Quisquam excepturi possimus hic, vitae corrupti impedit quas vero.  Esse voluptatem vitae deserunt assumenda earum, numquam iste, quibusdam ipsa ipsam expedita tempora ducimus.',
-      futureDate: '10-10-2050'
+      title: '',
+      details: '',
+      futureDate: ''
     }
   },
   methods: {

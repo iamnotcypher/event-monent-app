@@ -1,12 +1,9 @@
 <template>
-  <h2 v-if="!user">
-    Loading..
-  </h2>
+<div v-if="authIsReady">
   <div v-if="user" class="min-[100px]:px-4 md:px-16">
     <div class="md:flex justify-between items-center my-12">
       <div class="mb-4">
         <h1 v-if="user" class="text-black text-2xl mb-1 font-semibold">Welcome {{ user.fullname }},</h1>
-        <h1 v-if="!user" class="text-black text-2xl mb-1 font-semibold">You're not logged in!</h1>
         <p>Here are items in your eventful moment bucket.</p>
       </div>
       <router-link to="/create-event">
@@ -34,6 +31,7 @@
       <button class="btn bg-secondary">Load More</button>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -46,6 +44,7 @@ export default {
   data() {
     return {
       moments: [],
+      authIsReady: false
     }
   },
   async mounted() {
@@ -54,7 +53,7 @@ export default {
     this.moments = data.moments
 
     this.$store.dispatch('user', data)
-
+    this.authIsReady = this.$store.state.authIsReady
 
   },
   computed: {

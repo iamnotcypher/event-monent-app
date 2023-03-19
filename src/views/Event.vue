@@ -1,6 +1,5 @@
 <template>
   <div class="min-[100px]:px-4 md:px-16">
-    {{ id }}
     <h1 class="font-bold mb-1 font-normal mt-10 text-2xl mb-1">{{ moment.title }}</h1>
     <small class="text-gray-500">{{ moment.futureDate }}</small>
     <p class="my-12 text-sm leading-5">
@@ -30,10 +29,8 @@ export default {
   async mounted() {
 
     try{
-      const response = await axios.get('moment/6411bc5b44fd1047d538b770')
+      const response = await axios.get('moment/'+ this.id)
       this.moment =  response.data.data
-
-      console.log(this.moment)
       
     } catch(err) {
       console.log(err)

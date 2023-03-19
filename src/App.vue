@@ -16,7 +16,8 @@ export default {
 }
 </script>
 <style>
-  input {
+  input, textarea {
     outline-color: #e5e7eb;
+    font-size: 14px;
   }
 </style>

@@ -52,7 +52,6 @@ export default {
     this.$store.dispatch('user', data)
 
     this.moments = data.moments
-    console.log(this.moments)
 
   },
   computed: {

@@ -9,7 +9,7 @@
       <button class="btn bg-info mr-4">
         <router-link to="/edit-event">Edit</router-link>
       </button>
-      <button @click="handleDelete(moment.id)" class="btn bg-danger">Delete</button>
+      <button @click="handleDelete()" class="btn bg-danger">Delete</button>
     </div>
   </div>
 </template>
@@ -37,8 +37,10 @@ export default {
     }
   },
   methods:{
-    async handleDelete(id) {
-      await axios.delete('moment/'+ id)
+    async handleDelete() {
+      await axios.delete('moment/'+ this.id)
+
+      this.$router.push('/')
     }
   },
   computed: {

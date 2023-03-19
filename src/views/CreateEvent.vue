@@ -42,8 +42,7 @@ export default {
         futureDate: this.futureDate
       })
 
-      this.token = localStorage.getItem('token')
-      console.log(this.token)
+      this.$router.push('/')
 
       console.log(response)
 

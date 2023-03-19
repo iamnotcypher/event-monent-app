@@ -5,25 +5,25 @@
     <router-link to="/">
       <h1 class="italic font-bold">Eventful Moments.</h1>
     </router-link>
+    <template v-if="authIsReady">
+      <ul v-if="user">
+        <span class="text-sm pl-3">
+          <a @click="handleLogout" href="javascript:void(0)">Logout</a>
+        </span>
+        <span class="text-sm pl-3">
+          <router-link to="/">My Bucket</router-link>
+        </span>
+      </ul>
 
-    <ul v-if="user">
-      <span class="text-sm pl-3">
-        <a @click="handleLogout" href="javascript:void(0)">Logout</a>
-      </span>
-      <span class="text-sm pl-3">
-        <router-link to="/">My Bucket</router-link>
-      </span>
-    </ul>
-
-    <ul v-if="!user">
-      <span class="text-sm pl-3">
-        <router-link to="/login">Login</router-link>
-      </span>
-      <span class="text-sm pl-3">
-        <router-link to="/register">Register</router-link>
-      </span>
-    </ul>
-
+      <ul v-if="!user">
+        <span class="text-sm pl-3">
+          <router-link to="/login">Login</router-link>
+        </span>
+        <span class="text-sm pl-3">
+          <router-link to="/register">Register</router-link>
+        </span>
+      </ul>
+    </template>
   </nav>
 </template>
 
@@ -32,6 +32,11 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'Nav',
+  data() {
+    return {
+      authIsReady: false
+    }
+  },
   methods: {
     handleLogout() {
 
@@ -42,7 +47,8 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['user'])
+    ...mapGetters(['user']), 
+    // authIsReady: $store.state.authIsReady
   }
 };
 </script>

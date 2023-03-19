@@ -1,10 +1,12 @@
+import axios from 'axios';
 import { createStore } from 'vuex'
 
 const state = {
-  user: null
+  user: null,
+  authIsReady: false
 }
 
-export default createStore({
+const store =  createStore({
   state,
   getters: {
     user: (state) => {
@@ -19,6 +21,20 @@ export default createStore({
   mutations: {
     user(state, user) {
       state.user = user;
+    },
+    setAuthIsReady(state, payload) {
+      state.authIsReady = payload
     }
   }
 })
+
+const getUser = async () => {
+  const response  = await axios.get('users/me')
+  store.commit('setAuthIsReady', true)
+  store.commit('user', response.data.data[0])
+  // console.log(response.data.data[0])
+}
+
+getUser()
+
+export default store

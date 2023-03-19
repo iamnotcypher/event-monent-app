@@ -28,11 +28,12 @@ export default {
     return {
       futureDate: '03-07-2050',
       title: 'Title updated',
-      details: 'Details updated'
+      details: 'to just simlulate the edit'
     }
   },
   methods: {
     async handleEdit() {
+      // 
 
       try{
         const response = await axios.patch(`moment/${this.$router.currentRoute.params.id}`, {
@@ -40,7 +41,9 @@ export default {
         details: this.details,
         futureDate: this.futureDate
       })
-        this.$router.push('/')
+        // this.$router.push('/')
+        // console.log(this.$router)
+        console.log(response)
     } catch(err) {
       console.log('An error occurred!')
     }

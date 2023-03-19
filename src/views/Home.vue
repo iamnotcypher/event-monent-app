@@ -21,8 +21,8 @@
               <router-link class="grow" :to="{ name: 'Event', params: { id: moment._id } }">
                 <small class="text-secondary">View Details</small>
               </router-link>
-              <small class="text-gray-300 px-5">1{{ moment.createdAt.slice(0, 10) }}</small>
-              <small flex flex-col>{{ moment.updatedAt.slice(0, 10) }}</small>
+              <small class="text-gray-300 px-5">{{ moment.createdAt.substring(0, moment.createdAt.indexOf('T'))}}</small>
+              <small flex flex-col>{{ moment.updatedAt.substring(0, moment.createdAt.indexOf('T')) }}</small>
             </div>
         </div>
     </div>

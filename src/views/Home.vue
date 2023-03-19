@@ -22,7 +22,7 @@
                 <small class="text-secondary">View Details</small>
               </router-link>
               <small class="text-gray-300 px-5">1{{ moment.createdAt.slice(0, 10) }}</small>
-              <small>{{ moment.updatedAt.slice(0, 10) }}</small>
+              <small flex flex-col>{{ moment.updatedAt.slice(0, 10) }}</small>
             </div>
         </div>
     </div>
@@ -53,8 +53,7 @@ export default {
     this.moments = data.moments
 
     this.$store.dispatch('user', data)
-    this.authIsReady = this.$store.state.authIsReady
-
+    this.authIsReady = this.$store.state.authIsReady 
   },
   computed: {
     ...mapGetters(['user'])

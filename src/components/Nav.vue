@@ -2,9 +2,10 @@
   <nav
     class="flex justify-between items-center column bg-primary h-16 min-[100px]:px-4 md:px-16 text-white"
   >
-    <router-link to="/">
+    <router-link v-if="user" to="/">
       <h1 class="italic font-bold">Eventful Moments.</h1>
     </router-link>
+    <h1 v-else class="italic font-bold">Eventful Moments.</h1>
 
     <ul v-if="user">
       <span class="text-sm pl-3">
@@ -37,7 +38,7 @@ export default {
 
       localStorage.removeItem('token')
       this.$store.dispatch('user', null)
-      this.$router.push("/")
+      this.$router.push("/login")
 
     }
   },

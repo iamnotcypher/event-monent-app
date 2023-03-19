@@ -26,16 +26,16 @@ export default {
   name: 'EditEvent',
   data() {
     return {
-      futureDate: '20/07/2050',
-      title: 'Lorem ipsum began as scrambled, nonsensical Latin derived from Cicero’s 1st-century.',
-      details: 'Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It’s not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real. Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It’s not Latin, though it looks like it, and it actually says nothing,” Before & After magazine answered a curious reader, “Its ‘words’ loosely approximate the frequency with which letters occur in English, which is why at a glance it looks pretty real.'
+      futureDate: '03/07/2050',
+      title: 'Title updated',
+      details: 'Details updated'
     }
   },
   methods: {
     async handleEdit() {
 
       try{
-      const response = await axios.patch('moment/'+ this.id, {
+      const response = await axios.patch('moment/641650c52570134dd571cc5f', {
         title: this.title,
         details: this.details,
         futureDate: this.futureDate

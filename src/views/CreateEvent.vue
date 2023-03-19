@@ -46,7 +46,6 @@ export default {
       if(!response.status === '200') {
         throw new Error(response.statusText)
       } else {
-        console.log(response)
         this.$router.push('/')
       }
 

@@ -32,7 +32,6 @@ export default {
     try{
       const response = await axios.get('moment/'+ this.id)
       this.moment =  response.data.data
-      console.log(this.id)
       
     } catch(err) {
       console.log('An error occurred!')

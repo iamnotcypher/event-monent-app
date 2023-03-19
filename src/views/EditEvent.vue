@@ -26,7 +26,7 @@ export default {
   name: 'EditEvent',
   data() {
     return {
-      futureDate: '03/07/2050',
+      futureDate: '03-07-2050',
       title: 'Title updated',
       details: 'Details updated'
     }
@@ -35,18 +35,12 @@ export default {
     async handleEdit() {
 
       try{
-      const response = await axios.patch('moment/641650c52570134dd571cc5f', {
+        const response = await axios.patch(`moment/${this.$router.currentRoute.params.id}`, {
         title: this.title,
         details: this.details,
         futureDate: this.futureDate
       })
-
-      if(!response.text === '200') {
-        throw new Error('Error fetching data')
-      } else {
-        console.log(response)
-      }
-      
+        this.$router.push('/')
     } catch(err) {
       console.log('An error occurred!')
     }

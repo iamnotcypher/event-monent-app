@@ -5,7 +5,7 @@
     <router-link to="/">
       <h1 class="italic font-bold">Eventful Moments.</h1>
     </router-link>
-    <template v-if="authIsReady">
+    <template>
       <ul v-if="user">
         <span class="text-sm pl-3">
           <a @click="handleLogout" href="javascript:void(0)">Logout</a>

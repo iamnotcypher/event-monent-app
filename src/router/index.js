@@ -34,7 +34,7 @@ const routes = [
     props: true
   },
   {
-    path: '/event-edit',
+    path: '/event/:id/edit',
     name: 'EditEvent',
     component: EditEvent,
     props: true

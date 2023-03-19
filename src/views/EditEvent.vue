@@ -33,13 +33,24 @@ export default {
   },
   methods: {
     async handleEdit() {
-      const moment = {
+
+      try{
+      const response = await axios.patch('moment/'+ this.id, {
         title: this.title,
         details: this.details,
         futureDate: this.futureDate
-      }
+      })
 
-      const response = await axios.patch()
+      if(!response.text === '200') {
+        throw new Error('Error fetching data')
+      } else {
+        console.log(response)
+      }
+      
+    } catch(err) {
+      console.log('An error occurred!')
+    }
+
 
     }
   }

@@ -32,7 +32,7 @@ export default {
       id: ''
     }
   },
-  async mounted() {
+  async created() {
     this.id = this.$router.currentRoute._rawValue.params.id
     try{
         const response = await axios.get(`moment/${this.id}`)

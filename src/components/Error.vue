@@ -10,7 +10,3 @@ export default {
   props: ['error']
 }
 </script>
-
-<style>
-
-</style>

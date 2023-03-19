@@ -2,7 +2,8 @@
   <form @submit.prevent="handleSignup" class="max-w-md mx-auto mt-16 min-[100px]:px-4 md:px-16">
     <h1 class="text-black text-2xl mb-6 font-semibold">Create an account,</h1>
 
-    <Error :error="error" />
+    <Error v-if="error" :error="error" class="mb-6 bg-red-400 p-2 text-white rounded-sm d-inline-block" />
+
     <div class="mb-4">
       <label class="text-sm block">Full name</label>
       <input class="border w-full sm:w-96 rounded-md p-1" type="text" v-model="fullname" required />
@@ -25,7 +26,7 @@
 </template>
 
 <script>
-import Error from './Error.vue'
+import Error from '../components/Error'
 import  axios from 'axios'
 
 export default {
@@ -33,9 +34,9 @@ export default {
   components: { Error },
   data() {
     return {
-      fullname: '',
-      email: '',
-      password: '',
+      fullname: 'Hassan Warwick',
+      email: 'warwick@google.com',
+      password: 'test123',
       error: ''
     }
   },
@@ -44,16 +45,20 @@ export default {
 
       try{
 
-        const response = await axios.post('signup', {
+        const response = await axios.post('/users/signup', {
           fullname: this.fullname,
           email: this.email,
           password: this.password,
         });
-  
-        this.$router.push('users/login')
+
+        if(!response.data.status_code === 200) {
+          throw new Error(response.data.message)
+        } else {
+          this.$router.push('/login')
+        }
 
       } catch(err) {
-        this.error = 'Error occurred while regsitering!'
+        this.error = 'user already exist, please login'
       }
 
     }

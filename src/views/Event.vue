@@ -27,7 +27,7 @@ export default {
       moment: ''
     }
   },
-  async mounted() {
+  async created() {
 
     try{
       const response = await axios.get('moment/'+ this.id)

@@ -47,7 +47,7 @@ export default {
       authIsReady: false
     }
   },
-  async mounted() {
+  async created() {
     const response = await axios.get('users/me')
     const data =  response.data.data[0]
     this.moments = data.moments

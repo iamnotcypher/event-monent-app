@@ -3,7 +3,7 @@
     <h1 class="text-black text-2xl font-semibold">Welcome back,</h1>
     <p class="my-4">Hi, my name is Eventful Moments, I am a bucket… no, not the bucket of water but I store awesome moments you will like to have in coming years.</p>
 
-    <Error v-if="error" :error="error"/>
+    <Error v-if="error" :error="error" class="mb-6 bg-red-400 p-2 text-white rounded-sm d-inline-block" />
 
     <div class="mb-4">
       <label class="text-sm block">Email</label>
@@ -24,16 +24,15 @@
 
 <script>
 import axios from 'axios'
-
-import Error from './Error.vue'
+import Error from '../components/Error'
 
 export default {
   name: 'Login',
   components: { Error },
   data() {
     return {
-      email: 'emeka.akpan@uatdrive.com',
-      password: 'password',
+      email: '',
+      password: '',
       error: ''
     }
   },
@@ -44,8 +43,7 @@ export default {
         const response = await axios.post('users/login', {
           email: this.email,
           password: this.password
-        });
-  
+        });  
   
         localStorage.setItem('token', response.data.token)
         this.$store.dispatch('user', response.data.user)
@@ -53,7 +51,7 @@ export default {
         this.$router.push('/')
 
       } catch(err) {
-        this.error = 'Invalid email and password'
+        this.error = 'Invalid email or password'
       }
 
     }

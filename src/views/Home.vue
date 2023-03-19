@@ -42,17 +42,16 @@ export default {
   name: 'Home',
   data() {
     return {
-      moments: []
+      moments: [],
     }
   },
   async mounted() {
     const response = await axios.get('users/me')
     const data =  response.data.data[0]
+    this.moments = data.moments
 
     this.$store.dispatch('user', data)
 
-    this.moments = data.moments
-    console.log(this.moments)
 
   },
   computed: {

@@ -29,19 +29,30 @@ export default {
     return {
       title: 'A moment in the near future',
       details: 'Quisquam excepturi possimus hic, vitae corrupti impedit quas vero.  Esse voluptatem vitae deserunt assumenda earum, numquam iste, quibusdam ipsa ipsam expedita tempora ducimus.',
-      futureDate: '22-10-2050'
+      futureDate: '10-10-2050'
     }
   },
   methods: {
     async handleSubmit() {
 
-      await axios.post('moment', {
+      try{
+
+      const response = await axios.post('moment', {
         title: this.title,
         details: this.details,
         futureDate: this.futureDate
       })
 
-      this.$router.push('/')
+      if(!response.status === '200') {
+        throw new Error(response.statusText)
+      } else {
+        console.log(response)
+        this.$router.push('/')
+      }
+
+      } catch(err) {
+        console.log(err)
+      }
 
     }
   }

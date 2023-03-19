@@ -26,27 +26,37 @@ export default {
   name: 'EditEvent',
   data() {
     return {
-      futureDate: '03-07-2050',
-      title: 'Title updated',
-      details: 'to just simlulate the edit'
+      futureDate: '',
+      title: '',
+      details: '',
+      id: ''
     }
+  },
+  async mounted() {
+    this.id = this.$router.currentRoute._rawValue.params.id
+    try{
+        const response = await axios.get(`moment/${this.id}`)
+        this.title = response.data.data.title
+        this.futureDate = response.data.data.futureDate
+        this.details = response.data.data.details
+      } catch(err) {
+      console.log('An error occurred!')
+      }
   },
   methods: {
     async handleEdit() {
-      // 
 
       try{
-        const response = await axios.patch(`moment/${this.$router.currentRoute.params.id}`, {
+        const response = await axios.patch(`moment/${this.id}`, {
         title: this.title,
         details: this.details,
         futureDate: this.futureDate
       })
-        // this.$router.push('/')
-        // console.log(this.$router)
+        this.$router.push('/')
         console.log(response)
-    } catch(err) {
+      } catch(err) {
       console.log('An error occurred!')
-    }
+      }
 
 
     }

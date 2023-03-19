@@ -37,7 +37,6 @@ export default {
     try{
         const response = await axios.get(`moment/${this.id}`)
         this.title = response.data.data.title
-        this.futureDate = response.data.data.futureDate
         this.details = response.data.data.details
       } catch(err) {
       console.log('An error occurred!')

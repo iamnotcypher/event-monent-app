@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/moments/Home'
+import Home from '../views/Home'
 import Login from '../views/Login'
 import Register from '../views/Register'
-import CreateMoment from '../views/moments/CreateMoment'
-import MomentDetails from '../views/moments/MomentDetails'
-import EditMoment from '../views/moments/EditMoment'
+import CreateMoment from '../views/CreateMoment'
+import MomentDetails from '../views/MomentDetails'
+import EditMoment from '../views/EditMoment'
 
 const routes = [
   {

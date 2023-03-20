@@ -3,15 +3,15 @@
     <div class="mb-4">
       <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aliquam magnam natus sunt maxime ad commodi nisi culpa repellat explicabo corrupti minima laborum id debitis dolorem, ipsa tenetur velit porro dolorum est ratione aliquid sapiente! Incidunt quidem laboriosam facere blanditiis ad, enim porro explicabo unde fugit, eveniet dolorem consectetur quibusdam, minus qui vel. Dicta temporibus nulla eum sit ipsam ipsa?</p> -->
       <label class="text-sm block">Date in the future</label>
-      <input class="border w-full sm:w-96 rounded-md p-1" type="text" v-model="futureDate">
+      <input class="border w-full sm:w-96 rounded-md p-1" type="text" v-model="futureDate" placeholder="MM-DD-YYY" />
     </div>
     <div class="mb-4">
       <label class="text-sm block">Title</label>
-      <input class="border w-full sm:w-96 rounded-md p-1" type="text" v-model="title">
+      <input class="border w-full sm:w-96 rounded-md p-1" type="text" v-model="title" placeholder="Moment title" />
     </div>
     <div class="mb-4">
       <label class="text-sm block">Details</label>
-      <textarea class="border w-full sm:w-96 rounded-md p-1" name="" id="" cols="30" rows="8" v-model="details"></textarea>
+      <textarea class="border w-full sm:w-96 rounded-md p-1" name="" id="" cols="30" rows="8" v-model="details" placeholder="Moment details"></textarea>
     </div>
 
     <div class="text-center mt-8">
